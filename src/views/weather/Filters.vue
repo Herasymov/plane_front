@@ -14,6 +14,7 @@
                       clearable
                       v-model="externalId"
                       class="phone-input"/>
+        <div>{{ new Date() | dateFormat('YYYY.MM.DD') }}</div>
         <v-text-field prepend-icon="mdi-phone"
                       color="accent"
                       placeholder="Номер телефона"

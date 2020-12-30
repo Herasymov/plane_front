@@ -12,17 +12,17 @@ const routes = [
     children: [
       {
         path: 'weather',
-        name: 'Weather',
+        name: 'weather',
         component: () => import("../views/Weather")
       },
       {
         path: 'airport',
-        name: 'Airport',
+        name: 'airport',
         component: () => import('../views/Airport')
       },
       {
         path: 'chat',
-        name: 'Chat',
+        name: 'chat',
         component: () => import('../views/Chat')
       }
     ]

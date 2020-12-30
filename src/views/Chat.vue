@@ -5,7 +5,7 @@
 <script>
 
 export default {
-  name: "Chat"
+  name: "chat"
 }
 </script>
 

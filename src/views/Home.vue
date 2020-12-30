@@ -2,6 +2,9 @@
   <div class="home">
     <sidebar/>
     <appbar/>
+    <v-main>
+      <router-view/>
+    </v-main>
   </div>
 </template>
 

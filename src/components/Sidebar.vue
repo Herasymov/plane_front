@@ -3,7 +3,6 @@
                          fixed
                          light
                          width="300"
-                         v-model="drawer"
     >
         <v-layout column fill-height>
             <v-layout class="title-label" align-center justify-start style="padding-left: 25px;">
@@ -38,24 +37,11 @@
         name: "sidebar",
         data: () => ({
             tabs: [
-                {title: 'Погодные условия', to: {name: 'Weather'}, icon: 'mdi-weather-snowy-heavy'},
-                {title: 'Аэропорты', to: {name: 'Airport'}, icon: 'mdi-airport'},
-                {title: 'Чат', to: {name: 'Chat'}, icon: 'mdi-chat'}
+                {title: 'Погодные условия', to: {name: 'weather'}, icon: 'mdi-weather-snowy-heavy'},
+                {title: 'Аэропорты', to: {name: 'airport'}, icon: 'mdi-airport'},
+                {title: 'Чат', to: {name: 'chat'}, icon: 'mdi-chat'}
             ]
-        }),
-        computed: {
-            drawer: {
-                get() {
-                    return this.$store.state.drawer
-                },
-                set(value) {
-                    this.$store.dispatch('setDrawer', value)
-                }
-            },
-            isMobile() {
-                return this.$store.state.isMobile
-            }
-        }
+        })
     }
 </script>
 
