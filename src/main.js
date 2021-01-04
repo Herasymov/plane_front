@@ -21,6 +21,7 @@ Vue.filter('localTime', function (date) {
 Vue.prototype.$http = axios.create({
     baseURL: store.state.baseUrl
 });
+
 new Vue({
     router,
     store,

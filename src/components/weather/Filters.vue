@@ -4,24 +4,10 @@
               align-center>
         <v-text-field prepend-icon="mdi-account"
                       color="accent"
-                      placeholder="ФИО"
+                      placeholder="Погода"
                       clearable
                       v-model="name"
                       class="phone-input"/>
-        <v-text-field prepend-icon="mdi-card"
-                      color="accent"
-                      placeholder="Номер карты"
-                      clearable
-                      v-model="externalId"
-                      class="phone-input"/>
-        <div>{{ new Date() | dateFormat('YYYY.MM.DD') }}</div>
-        <v-text-field prepend-icon="mdi-phone"
-                      color="accent"
-                      placeholder="Номер телефона"
-                      clearable
-                      v-model="phone"
-                      class="phone-input"/>
-
         <v-menu
                 ref="startMenu"
                 v-model="startMenu"
@@ -100,9 +86,7 @@
             startDateString: "",
             endDate: "",
             endDateString: "",
-            phone: "",
             name: "",
-            externalId: ""
         }),
         computed: {
             minDate() {
@@ -110,34 +94,28 @@
             }
         },
         watch: {
-            phone(to) {
-                this.updateQuery('phone', to)
-            },
             name(to) {
                 this.updateQuery('name', to)
-            },
-            externalId(to) {
-                this.updateQuery('externalId', to)
             },
             startDateString(to) {
                 const query = {...this.$route.query};
                 console.log('to', to)
                 if (to) {
-                    this.$router.history.push({name: 'customers', query: {...query, page: 1, startDate: this.startDate}})
+                    this.$router.history.push({name: 'weather', query: {...query, page: 1, startDate: this.startDate}})
                 } else {
                     delete query["startDate"];
                     console.log(query)
-                    this.$router.history.push({name: 'customers', query: {...query, page: 1}})
+                    this.$router.history.push({name: 'weather', query: {...query, page: 1}})
                 }
             },
             endDateString(to) {
                 const query = {...this.$route.query};
 
                 if (to) {
-                    this.$router.history.push({name: 'customers', query: {...query, page: 1, endDate: this.endDate}})
+                    this.$router.history.push({name: 'weather', query: {...query, page: 1, endDate: this.endDate}})
                 } else {
                     delete query["endDate"];
-                    this.$router.history.push({name: 'customers', query: {...query, page: 1}})
+                    this.$router.history.push({name: 'weather', query: {...query, page: 1}})
                 }
             }
         },
@@ -151,18 +129,16 @@
                 const query = {...this.$route.query};
 
                 if (to) {
-                    this.$router.history.push({name: 'customers', query: {...query, page: 1, [key]: to}})
+                    this.$router.history.push({name: 'weather', query: {...query, page: 1, [key]: to}})
                 } else {
                     delete query[key];
-                    this.$router.history.push({name: 'customers', query: {...query, page: 1}})
+                    this.$router.history.push({name: 'weather', query: {...query, page: 1}})
                 }
             }
         },
         created() {
             const query = this.$route.query;
-            this.phone = query.phone || '';
             this.name = query.name || '';
-            this.externalId = query.externalId || '';
 
             this.startDate = query.startDate || '';
             if (this.startDate) {

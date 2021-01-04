@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Filters from "@/views/weather/Filters";
-import WeatherTable from "@/views/weather/WeatherTable";
+import Filters from "@/components/weather/Filters";
+import WeatherTable from "@/components/weather/WeatherTable";
 export default {
   name: "Weather",
   components: {

@@ -38,7 +38,7 @@
         data: () => ({
             tabs: [
                 {title: 'Погодные условия', to: {name: 'weather'}, icon: 'mdi-weather-snowy-heavy'},
-                {title: 'Аэропорты', to: {name: 'airport'}, icon: 'mdi-airport'},
+                {title: 'Аеропорты', to: {name: 'airport'}, icon: 'mdi-airport'},
                 {title: 'Чат', to: {name: 'chat'}, icon: 'mdi-chat'}
             ]
         })
